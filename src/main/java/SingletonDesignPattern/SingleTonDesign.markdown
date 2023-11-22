@@ -6,7 +6,7 @@ single object.
 
 1.Eager Intialization.\
 2.Using Static Block\
-3.Lazy Initalization
+3.Lazy Initalization\
 4.Lazy initialization with Double check locking
 ### Eager Intialization(without having any multithreading envi)
 
