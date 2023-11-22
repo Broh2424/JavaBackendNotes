@@ -6,12 +6,12 @@ single object.This type approach is called Singleton Design Pattern
 
 
 ## Steps to achieve Singleton design:
-1. instance variable in the class must be:
+1. refernce variable in the class must be:
     - private 
     - static
     - and final
-2. Constructor must be private.
-3. one public method should be there for accessing
+2. Constructor must be private
+3. one public method should be there for accessing the object.
 ## Types of singleton design pattern  approach:
 
 1.Eager Intialization.\
@@ -23,7 +23,7 @@ single object.This type approach is called Singleton Design Pattern
 
 ````java
 class Singleton {
-    private static final Singleton singletonInstance = new Singleton();
+    private static final Singleton singletonReferance = new Singleton();
 
     private Singleton() {
         // private constructor which cannot be accessed 
@@ -31,7 +31,7 @@ class Singleton {
 
     public static Singleton getSingleton() {
         System.out.println();
-        return singletonInstance;
+        return singletonReferance;
     }
 }
 public class Main{
@@ -50,7 +50,7 @@ public class Main{
 
 ````java
 class Singleton {
-    private static final Singleton instance;
+    private static final Singleton singletonReferance;
 
     private Singleton() {
 
@@ -61,7 +61,7 @@ class Singleton {
     }
 
     public static Singleton getInstance() {
-        return instance;
+        return singletonReferance;
     }
 }
 
@@ -73,17 +73,17 @@ class Singleton {
 ````java
 
 class Singleton {
-   private static final Singleton singletonInstance;
+   private static final Singleton singletonReferance;
 
    private Singleton() {
 
    }
 
    public static Singleton getSingletonInstance() {
-       if(singletonInstance==null){
-           singletonInstance=new Singleton();
+       if(singletonReferance==null){
+           singletonReferance=new Singleton();
        }
-      return singletonInstance;
+      return singletonReferance;
    }
 }
 ````
@@ -93,17 +93,17 @@ class Singleton {
 ````java
 
 class Singleton {
-   private static final Singleton singleton;
+   private static final Singleton singletonReferance;
 
    private Singleton() {
 
    }
 
    synchronized public static Singleton getSingleton() {
-       if(singleton==null){
-           singleton= new Singleton();
+       if(singletonReferance==null){
+           singletonReferance= new Singleton();
        }
-      return singleton;
+      return singletonReferance;
    }
 }
 
@@ -122,19 +122,19 @@ class Singleton {
 ```java
 
 class Singleton {
-   private static final Singleton singletonInstance;
+   private static final Singleton singletonReferance;
 
    private Singleton() {
 
    }
 
    public static Singleton getSingletonInstance() {
-      if(singletonInstance==null){
+      if(singletonReferance==null){
           synchronized (Singleton.class){
-              singletonInstance=new Singleton();
+              singletonReferance=new Singleton();
           }
       }
-      return  singletonInstance;
+      return  singletonReferance;
    }
 }
 
